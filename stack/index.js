@@ -12,19 +12,19 @@
 
 class Stack {
   constructor() {
-    this.data = [];
+    this.arr = [];
   }
 
   push(newData) {
-    this.data.push(newData)
+    this.arr.push(newData)
   }
 
   pop() {
-    return this.data.pop()
+    return this.arr.pop()
   }
 
   peek() {
-    return this.data[this.data.length - 1]
+    return this.arr[this.arr.length - 1]
   }
 }
 
