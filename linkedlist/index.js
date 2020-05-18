@@ -80,7 +80,7 @@ class LinkedList {
   insertLast(data) {
     // need to handle for empty data
     const last = this.getLast()
-    
+
     if (!this.head) {
       return;
     }
@@ -88,6 +88,20 @@ class LinkedList {
     if (this.head) {
       last.next = new Node(data);
     }
+  }
+
+  getAt(index) {
+    let counter = 0;
+    let node = this.head;
+
+    while (node) {
+      if (counter === index) {
+        return node;
+      }
+        counter++;
+        node = node.next;
+    }
+    return null;
   }
 }
 
