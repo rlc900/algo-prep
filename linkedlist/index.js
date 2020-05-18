@@ -60,8 +60,6 @@ class LinkedList {
 
   removeLast() {
 
-
-
     if (!this.head) {
       return;
     }
@@ -77,6 +75,19 @@ class LinkedList {
       node = node.next
     }
     prev.next = null;
+  }
+
+  insertLast(data) {
+    // need to handle for empty data
+    const last = this.getLast()
+    
+    if (!this.head) {
+      return;
+    }
+
+    if (this.head) {
+      last.next = new Node(data);
+    }
   }
 }
 
