@@ -136,8 +136,10 @@ class LinkedList {
     const prev = this.getAt(index - 1) || this.getLast()
     const node  = new Node(data, prev.next)
     prev.next = node
+  }
 
-
+  forEach(func) {
+    
   }
 }
 
