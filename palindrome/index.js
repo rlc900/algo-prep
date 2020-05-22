@@ -8,9 +8,9 @@
 //   palindrome("abcdefg") === false
 
 function palindrome(str) {
-  strArray = str.split('')
-  reversedStr = strArray.reverse()
-  newString = reversedStr.join('')
+  strToArray = str.split('')
+  reversedArr = strToArray.reverse()
+  newString = reversedArr.join('')
   if (str === newString) {
     return true
   } else {
