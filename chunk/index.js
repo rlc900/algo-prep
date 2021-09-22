@@ -9,25 +9,26 @@
 // chunk([1, 2, 3, 4, 5], 10) --> [[ 1, 2, 3, 4, 5]]
 
 function chunk(array, size) {
-
-  // return sub arrays with the length of the given size
-  const chunked = []
-  // array.forEach((ele) => {
-  //   let lastEle = chunked[chunked.length -1]
-  //   if (!lastEle || lastEle.length === size) {
-  //     chunked.push([ele])
-  //   } else {
-  //     lastEle.push(ele)
-  //   }
-  // })
-  // return chunked
-  let i = 0
-  while (i < array.length) {
-    let sliced = array.slice(i, i + size)
-    chunked.push(sliced)
-    i += size
+  // chunk size represents how many elements (nums) in 
+  // each chunk, NOT how many chunks!!!
+  // 1. create new empty array
+  // 2. iterate through given array
+  // 3. create variable to hold the last element in subarray
+  // 4. check to see if the last element in subarray doesnt
+  // exist or if the length of that subarray equals passed in size
+  // 5. if one is true then push sub array w ele into newArr
+  // 5a. else push ele into subarray
+  // 6. return new array
+  const newArray = [];
+  for (let num of array) {
+    let last = newArray[newArray.length - 1]
+      if (!last || last.length === size) {
+         newArray.push([num])
+       } else {
+         last.push(num)
+      }
   }
-  return chunked
-}
+  return newArray
+  }
 
 module.exports = chunk;
